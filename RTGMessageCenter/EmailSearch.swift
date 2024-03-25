@@ -22,6 +22,11 @@ struct EmailSearch: View {
             errors.append("An email address is required to continue")
         }
 
+        if !emailAddress.contains(/\@/) 
+            || !emailAddress.contains(/\./) {
+            errors.append("The email address is invalid.")
+        }
+        
         // if no errors, show results
         if errors.isEmpty {
             showSearchResults = true
