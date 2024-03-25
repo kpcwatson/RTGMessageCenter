@@ -1,5 +1,5 @@
 //
-//  StyledButton.swift
+//  WideStyledButton.swift
 //  RTGMessageCenter
 //
 //  Created by Kyle Watson on 3/25/24.
@@ -7,27 +7,35 @@
 
 import SwiftUI
 
-struct StyledButton: View {
+struct WideStyledButton: View {
     @Environment(\.isEnabled) private var isEnabled: Bool
 
     let title: String
     let action: () -> Void
 
     var body: some View {
-        Button(title) {
+        Button {
             action()
+        } label: {
+            HStack {
+                Spacer()
+                Text(title)
+                Spacer()
+            }
         }
-        .font(Font.custom("Poppins", size: 16))
+        .font(.Poppins.body)
         .fontWeight(.medium)
-        .frame(maxWidth: .infinity, minHeight: 44.0)
+        .frame(height: 44)
+        .frame(maxWidth: .infinity)
         .foregroundStyle(isEnabled ? .white : .secondary)
         .background(isEnabled ? Color("RTGBlue") : .gray)
         .clipShape(RoundedRectangle(cornerRadius: 44.0))
+        .contentShape(Rectangle())
     }
 }
 
 #Preview {
-    StyledButton(title: "Search") {
+    WideStyledButton(title: "Search") {
         //
     }
 }

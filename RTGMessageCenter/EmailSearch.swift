@@ -25,6 +25,7 @@ struct EmailSearch: View {
         // if no errors, show results
         if errors.isEmpty {
             showSearchResults = true
+            print("showSearchResults! \(showSearchResults)")
         }
     }
 
@@ -34,18 +35,19 @@ struct EmailSearch: View {
                 Group {
                     Image("RTG-LOGO")
                     Text("Message Center")
-                        .font(Font.custom("Poppins", size: 24))
+                        .font(.Poppins.header)
                 }
                 .padding()
 
                 Group {
                     Text("Enter your email to search for your messages")
-                        .font(Font.custom("Poppins", size: 16))
+                        .font(.Poppins.body)
                         .multilineTextAlignment(.center)
-                        .padding(16.0)
                     TextField("Enter your email...", text: $emailAddress)
                         .padding([.top, .leading, .trailing])
-                        .font(Font.custom("Poppins", size: 16))
+                        .font(.Poppins.body)
+                        .keyboardType(.emailAddress)
+                        .textContentType(.emailAddress)
                         .autocorrectionDisabled(true)
                         .textInputAutocapitalization(.never)
                         .onSubmit {
@@ -61,13 +63,13 @@ struct EmailSearch: View {
                 if !errors.isEmpty {
                     ForEach(errors, id: \.self) { error in
                         Text(error)
-                            .font(Font.custom("Poppins", size: 16))
+                            .font(.Poppins.body)
                             .fontWeight(.bold)
                             .foregroundStyle(.red)
                     }
                 }
 
-                StyledButton(title: "Search") {
+                WideStyledButton(title: "Search") {
                     validateAndShowResults()
                 }
                 .disabled(emailAddress.isEmpty == true)

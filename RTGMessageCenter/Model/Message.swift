@@ -7,10 +7,15 @@
 
 import Foundation
 
-struct Message {
+struct Message: Identifiable {
+    var id = UUID()
     let name: String
     let date: Date
     let message: String
+
+    enum CodingKeys: String, CodingKey {
+        case name, date, message
+    }
 }
 
 extension Message: Codable {

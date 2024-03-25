@@ -30,10 +30,12 @@
 		3FF4BDAC2BB1CE69006F9390 /* Poppins-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3FF4BD9A2BB1CE69006F9390 /* Poppins-Light.ttf */; };
 		3FF4BDAD2BB1CE69006F9390 /* Poppins-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3FF4BD9B2BB1CE69006F9390 /* Poppins-ExtraBoldItalic.ttf */; };
 		3FF4BDB02BB1D27E006F9390 /* EmailSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF4BDAF2BB1D27E006F9390 /* EmailSearch.swift */; };
-		3FF4BDB22BB1D51B006F9390 /* StyledButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF4BDB12BB1D51B006F9390 /* StyledButton.swift */; };
+		3FF4BDB22BB1D51B006F9390 /* WideStyledButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF4BDB12BB1D51B006F9390 /* WideStyledButton.swift */; };
 		3FF4BDB42BB1E0A0006F9390 /* SearchResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF4BDB32BB1E0A0006F9390 /* SearchResults.swift */; };
 		3FF4BDB72BB1E114006F9390 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF4BDB62BB1E114006F9390 /* Message.swift */; };
-		3FF4BDBB2BB2116E006F9390 /* Message+Fetching.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF4BDBA2BB2116E006F9390 /* Message+Fetching.swift */; };
+		3FF4BDBD2BB2207B006F9390 /* MessagesAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF4BDBC2BB2207B006F9390 /* MessagesAPIClient.swift */; };
+		3FF4BDBF2BB22825006F9390 /* MessageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF4BDBE2BB22824006F9390 /* MessageService.swift */; };
+		3FF4BDC12BB23D59006F9390 /* PoppinsFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF4BDC02BB23D59006F9390 /* PoppinsFonts.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,10 +64,12 @@
 		3FF4BD9B2BB1CE69006F9390 /* Poppins-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
 		3FF4BDAE2BB1CEC3006F9390 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		3FF4BDAF2BB1D27E006F9390 /* EmailSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailSearch.swift; sourceTree = "<group>"; };
-		3FF4BDB12BB1D51B006F9390 /* StyledButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyledButton.swift; sourceTree = "<group>"; };
+		3FF4BDB12BB1D51B006F9390 /* WideStyledButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WideStyledButton.swift; sourceTree = "<group>"; };
 		3FF4BDB32BB1E0A0006F9390 /* SearchResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResults.swift; sourceTree = "<group>"; };
 		3FF4BDB62BB1E114006F9390 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
-		3FF4BDBA2BB2116E006F9390 /* Message+Fetching.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Message+Fetching.swift"; sourceTree = "<group>"; };
+		3FF4BDBC2BB2207B006F9390 /* MessagesAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesAPIClient.swift; sourceTree = "<group>"; };
+		3FF4BDBE2BB22824006F9390 /* MessageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageService.swift; sourceTree = "<group>"; };
+		3FF4BDC02BB23D59006F9390 /* PoppinsFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoppinsFonts.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,9 +105,10 @@
 				3FF4BDAE2BB1CEC3006F9390 /* Info.plist */,
 				3FF4BD7A2BB1CB51006F9390 /* RTGMessageCenterApp.swift */,
 				3FF4BD7C2BB1CB51006F9390 /* ContentView.swift */,
+				3FF4BDC02BB23D59006F9390 /* PoppinsFonts.swift */,
 				3FF4BDAF2BB1D27E006F9390 /* EmailSearch.swift */,
 				3FF4BDB32BB1E0A0006F9390 /* SearchResults.swift */,
-				3FF4BDB12BB1D51B006F9390 /* StyledButton.swift */,
+				3FF4BDB12BB1D51B006F9390 /* WideStyledButton.swift */,
 				3FF4BDB52BB1E0B4006F9390 /* Model */,
 				3FF4BD882BB1CE4F006F9390 /* Resources */,
 				3FF4BD802BB1CB52006F9390 /* Preview Content */,
@@ -157,7 +162,8 @@
 			isa = PBXGroup;
 			children = (
 				3FF4BDB62BB1E114006F9390 /* Message.swift */,
-				3FF4BDBA2BB2116E006F9390 /* Message+Fetching.swift */,
+				3FF4BDBC2BB2207B006F9390 /* MessagesAPIClient.swift */,
+				3FF4BDBE2BB22824006F9390 /* MessageService.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -253,10 +259,12 @@
 				3FF4BD7D2BB1CB51006F9390 /* ContentView.swift in Sources */,
 				3FF4BDB02BB1D27E006F9390 /* EmailSearch.swift in Sources */,
 				3FF4BDB42BB1E0A0006F9390 /* SearchResults.swift in Sources */,
-				3FF4BDBB2BB2116E006F9390 /* Message+Fetching.swift in Sources */,
+				3FF4BDBD2BB2207B006F9390 /* MessagesAPIClient.swift in Sources */,
+				3FF4BDBF2BB22825006F9390 /* MessageService.swift in Sources */,
 				3FF4BDB72BB1E114006F9390 /* Message.swift in Sources */,
-				3FF4BDB22BB1D51B006F9390 /* StyledButton.swift in Sources */,
+				3FF4BDB22BB1D51B006F9390 /* WideStyledButton.swift in Sources */,
 				3FF4BD7B2BB1CB51006F9390 /* RTGMessageCenterApp.swift in Sources */,
+				3FF4BDC12BB23D59006F9390 /* PoppinsFonts.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
