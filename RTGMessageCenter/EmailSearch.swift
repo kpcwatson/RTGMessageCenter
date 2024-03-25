@@ -30,7 +30,6 @@ struct EmailSearch: View {
         // if no errors, show results
         if errors.isEmpty {
             showSearchResults = true
-            print("showSearchResults! \(showSearchResults)")
         }
     }
 

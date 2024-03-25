@@ -39,8 +39,13 @@ struct MessagesAPIClient {
 
         guard httpResponse.statusCode >= 200
                 && httpResponse.statusCode < 300 else {
-            let messageError = try decoder.decode(MessageError.self, from: data)
-            throw APIError.error(messageError)
+            do {
+                let messageError = try decoder.decode(MessageError.self, from: data)
+                throw APIError.error(messageError)
+            } catch {
+                // 500 responses have an extra colon...
+                throw APIError.failedStatusCode(httpResponse.statusCode)
+            }
         }
 
         decoder.dateDecodingStrategy = Message.dateDecodingStrategy
@@ -56,10 +61,9 @@ struct MessagesAPIClient {
         guard let url = components.url else {
             throw APIError.invalidUrl(components.string)
         }
-        print("Request URL: \(url)")
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
-        print("Request: \(request)")
+
         return request
     }
 }
