@@ -14,6 +14,7 @@ struct MessagesAPIClient {
         case invalidUrl(String?)
         case invalidResponse
         case failedStatusCode(Int)
+        case error(MessageError)
     }
 
     private var session: URLSession
@@ -34,12 +35,14 @@ struct MessagesAPIClient {
             throw APIError.invalidResponse
         }
 
-        guard httpResponse.statusCode >= 200 
+        let decoder = JSONDecoder()
+
+        guard httpResponse.statusCode >= 200
                 && httpResponse.statusCode < 300 else {
-            throw APIError.failedStatusCode(httpResponse.statusCode)
+            let messageError = try decoder.decode(MessageError.self, from: data)
+            throw APIError.error(messageError)
         }
 
-        let decoder = JSONDecoder()
         decoder.dateDecodingStrategy = Message.dateDecodingStrategy
         let messages = try decoder.decode([Message].self, from: data)
 
@@ -77,6 +80,8 @@ extension MessagesAPIClient.APIError: CustomStringConvertible {
             "Response is not a valid HTTP response"
         case .failedStatusCode(let statusCode):
             "Invalid response status code: \(statusCode)"
+        case .error(let messageError):
+            messageError.error
         }
     }
 }
