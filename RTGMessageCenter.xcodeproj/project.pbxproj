@@ -29,6 +29,8 @@
 		3FF4BDAB2BB1CE69006F9390 /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3FF4BD992BB1CE69006F9390 /* Poppins-Medium.ttf */; };
 		3FF4BDAC2BB1CE69006F9390 /* Poppins-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3FF4BD9A2BB1CE69006F9390 /* Poppins-Light.ttf */; };
 		3FF4BDAD2BB1CE69006F9390 /* Poppins-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3FF4BD9B2BB1CE69006F9390 /* Poppins-ExtraBoldItalic.ttf */; };
+		3FF4BDB02BB1D27E006F9390 /* EmailSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF4BDAF2BB1D27E006F9390 /* EmailSearch.swift */; };
+		3FF4BDB22BB1D51B006F9390 /* StyledButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF4BDB12BB1D51B006F9390 /* StyledButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +58,8 @@
 		3FF4BD9A2BB1CE69006F9390 /* Poppins-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Light.ttf"; sourceTree = "<group>"; };
 		3FF4BD9B2BB1CE69006F9390 /* Poppins-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
 		3FF4BDAE2BB1CEC3006F9390 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		3FF4BDAF2BB1D27E006F9390 /* EmailSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailSearch.swift; sourceTree = "<group>"; };
+		3FF4BDB12BB1D51B006F9390 /* StyledButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyledButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +95,8 @@
 				3FF4BDAE2BB1CEC3006F9390 /* Info.plist */,
 				3FF4BD7A2BB1CB51006F9390 /* RTGMessageCenterApp.swift */,
 				3FF4BD7C2BB1CB51006F9390 /* ContentView.swift */,
+				3FF4BDAF2BB1D27E006F9390 /* EmailSearch.swift */,
+				3FF4BDB12BB1D51B006F9390 /* StyledButton.swift */,
 				3FF4BD882BB1CE4F006F9390 /* Resources */,
 				3FF4BD802BB1CB52006F9390 /* Preview Content */,
 			);
@@ -228,6 +234,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				3FF4BD7D2BB1CB51006F9390 /* ContentView.swift in Sources */,
+				3FF4BDB02BB1D27E006F9390 /* EmailSearch.swift in Sources */,
+				3FF4BDB22BB1D51B006F9390 /* StyledButton.swift in Sources */,
 				3FF4BD7B2BB1CB51006F9390 /* RTGMessageCenterApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

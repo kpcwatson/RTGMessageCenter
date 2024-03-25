@@ -13,8 +13,7 @@ struct ContentView: View {
             Image("RTG-LOGO")
             Text("Message Center")
                 .font(Font.custom("Poppins", size: 24))
-
-
+            EmailSearch()
         }
         .padding()
     }
