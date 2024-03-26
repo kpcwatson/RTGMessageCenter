@@ -7,9 +7,7 @@
 
 import Foundation
 
-let baseUrl = "https://vcp79yttk9.execute-api.us-east-1.amazonaws.com/messages/users/"
-
-struct MessagesAPIClient {
+actor MessagesAPIClient {
     enum APIError: Error {
         case invalidUrl(String?)
         case invalidResponse
@@ -25,6 +23,11 @@ struct MessagesAPIClient {
         components.path = "/messages/users/"
         return components
     }()
+
+    init(urlSession: URLSession = URLSession.shared) {
+        self.session = urlSession
+    }
+
 
     func fetchMessages(for email: String) async throws -> [Message] {
         let request = try buildUrlRequest(with: email)
@@ -66,13 +69,6 @@ struct MessagesAPIClient {
         request.httpMethod = "GET"
 
         return request
-    }
-}
-
-extension MessagesAPIClient {
-
-    init(urlSession: URLSession = URLSession.shared) {
-        self.session = urlSession
     }
 }
 

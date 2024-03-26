@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// TODO: use custom buttonStyle instead of custom view
 struct WideStyledButton: View {
     @Environment(\.isEnabled) private var isEnabled: Bool
 
@@ -35,7 +36,5 @@ struct WideStyledButton: View {
 }
 
 #Preview {
-    WideStyledButton(title: "Search") {
-        //
-    }
+    WideStyledButton(title: "Search") {}
 }

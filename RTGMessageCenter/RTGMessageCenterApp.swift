@@ -7,11 +7,14 @@
 
 import SwiftUI
 
+//
+// Marked some additional things I would normally/ideally do with TODO
+//
 @main
 struct RTGMessageCenterApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            EmailSearch()
         }
     }
 }

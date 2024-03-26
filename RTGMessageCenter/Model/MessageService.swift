@@ -8,9 +8,7 @@
 import Foundation
 
 protocol MessagesProvider {
-    func messages(
-        for emailAddress: String
-    ) async throws -> [Message]
+    func messages(for emailAddress: String) async throws -> [Message]
 }
 
 class MessageService: MessagesProvider {
@@ -20,19 +18,15 @@ class MessageService: MessagesProvider {
         self.apiClient = apiClient
     }
 
-    func messages(
-        for emailAddress: String
-    ) async throws -> [Message] {
-        return try await apiClient
+    func messages(for emailAddress: String) async throws -> [Message] {
+        try await apiClient
             .fetchMessages(for: emailAddress)
     }
 }
 
 // MARK: - for use in previews
 class MockMessageService: MessagesProvider {
-    func messages(
-        for emailAddress: String
-    ) async throws -> [Message] {
+    func messages(for emailAddress: String) async throws -> [Message] {
         return [
             Message(
                 name: "Mr. Test",

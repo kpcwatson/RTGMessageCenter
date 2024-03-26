@@ -10,15 +10,22 @@ import SwiftUI
 struct SearchResults: View {
     @Environment(\.dismiss) private var dismiss
 
-    let emailAddress: String
-    let messageService: MessagesProvider
-
+    // TODO: ideally use something like a state enum and a state machine
     @State private var messages = [Message]()
+    private var sortedMessages: [Message] {
+        messages.sorted { $0.date > $1.date }
+    }
+
     @State private var isLoading = true
     @State private var loadingError: Error?
 
-    private var sortedMessages: [Message] {
-        return messages.sorted { $0.date > $1.date }
+    let emailAddress: String
+    let messageService: MessagesProvider
+
+    init(emailAddress: String,
+         messageService: MessagesProvider = MessageService()) {
+        self.emailAddress = emailAddress
+        self.messageService = messageService
     }
 
     var body: some View {
@@ -40,9 +47,10 @@ struct SearchResults: View {
             .listStyle(.plain)
         }
         .overlay {
+            // TODO: state machine useful here
             if let loadingError {
                 ContentUnavailableView {
-                    Label("An error occurred", systemImage: "exclamationmark.triangle")
+                    Label("An Error Occurred", systemImage: "exclamationmark.triangle")
                 } description: {
                     Text("\(loadingError.localizedDescription)")
                         .font(.Poppins.callout)
@@ -53,7 +61,7 @@ struct SearchResults: View {
                         .progressViewStyle(CircularProgressViewStyle())
                 } else {
                     ContentUnavailableView {
-                        Label("No messages yet", systemImage: "square.stack.3d.up.slash")
+                        Label("No Messages", systemImage: "square.stack.3d.up.slash")
                     } description: {
                         Text("There are no messages to display for \(emailAddress)")
                             .font(.Poppins.body)
@@ -63,6 +71,7 @@ struct SearchResults: View {
         }
         .navigationBarBackButtonHidden(true)
         .toolbar {
+            // customize back button (hide text)
             ToolbarItem(placement: .topBarLeading) {
                 Button {
                     dismiss()
@@ -80,14 +89,6 @@ struct SearchResults: View {
 
             isLoading = false
         }
-    }
-
-    init(
-        emailAddress: String,
-        messageService: MessagesProvider = MessageService()
-    ) {
-        self.emailAddress = emailAddress
-        self.messageService = messageService
     }
 }
 

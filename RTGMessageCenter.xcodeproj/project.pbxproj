@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		3FF4BD7B2BB1CB51006F9390 /* RTGMessageCenterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF4BD7A2BB1CB51006F9390 /* RTGMessageCenterApp.swift */; };
-		3FF4BD7D2BB1CB51006F9390 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF4BD7C2BB1CB51006F9390 /* ContentView.swift */; };
 		3FF4BD7F2BB1CB52006F9390 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FF4BD7E2BB1CB52006F9390 /* Assets.xcassets */; };
 		3FF4BD822BB1CB52006F9390 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FF4BD812BB1CB52006F9390 /* Preview Assets.xcassets */; };
 		3FF4BD9C2BB1CE69006F9390 /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3FF4BD8A2BB1CE68006F9390 /* Poppins-Regular.ttf */; };
@@ -42,7 +41,6 @@
 /* Begin PBXFileReference section */
 		3FF4BD772BB1CB51006F9390 /* RTGMessageCenter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RTGMessageCenter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FF4BD7A2BB1CB51006F9390 /* RTGMessageCenterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RTGMessageCenterApp.swift; sourceTree = "<group>"; };
-		3FF4BD7C2BB1CB51006F9390 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3FF4BD7E2BB1CB52006F9390 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3FF4BD812BB1CB52006F9390 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3FF4BD8A2BB1CE68006F9390 /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
@@ -106,10 +104,9 @@
 			children = (
 				3FF4BDAE2BB1CEC3006F9390 /* Info.plist */,
 				3FF4BD7A2BB1CB51006F9390 /* RTGMessageCenterApp.swift */,
-				3FF4BD7C2BB1CB51006F9390 /* ContentView.swift */,
-				3FF4BDC02BB23D59006F9390 /* PoppinsFonts.swift */,
 				3FF4BDAF2BB1D27E006F9390 /* EmailSearch.swift */,
 				3FF4BDB32BB1E0A0006F9390 /* SearchResults.swift */,
+				3FF4BDC02BB23D59006F9390 /* PoppinsFonts.swift */,
 				3FF4BDB12BB1D51B006F9390 /* WideStyledButton.swift */,
 				3FF4BDB52BB1E0B4006F9390 /* Model */,
 				3FF4BD882BB1CE4F006F9390 /* Resources */,
@@ -164,9 +161,9 @@
 			isa = PBXGroup;
 			children = (
 				3FF4BDB62BB1E114006F9390 /* Message.swift */,
-				3FF4BDBC2BB2207B006F9390 /* MessagesAPIClient.swift */,
-				3FF4BDBE2BB22824006F9390 /* MessageService.swift */,
 				3FF4BDC22BB240DB006F9390 /* MessageError.swift */,
+				3FF4BDBE2BB22824006F9390 /* MessageService.swift */,
+				3FF4BDBC2BB2207B006F9390 /* MessagesAPIClient.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -259,7 +256,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3FF4BD7D2BB1CB51006F9390 /* ContentView.swift in Sources */,
 				3FF4BDB02BB1D27E006F9390 /* EmailSearch.swift in Sources */,
 				3FF4BDB42BB1E0A0006F9390 /* SearchResults.swift in Sources */,
 				3FF4BDBD2BB2207B006F9390 /* MessagesAPIClient.swift in Sources */,
