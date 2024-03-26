@@ -39,13 +39,14 @@ struct MessagesAPIClient {
 
         guard httpResponse.statusCode >= 200
                 && httpResponse.statusCode < 300 else {
+            let messageError: MessageError
             do {
-                let messageError = try decoder.decode(MessageError.self, from: data)
-                throw APIError.error(messageError)
+                messageError = try decoder.decode(MessageError.self, from: data)
             } catch {
                 // 500 responses have an extra colon...
                 throw APIError.failedStatusCode(httpResponse.statusCode)
             }
+            throw APIError.error(messageError)
         }
 
         decoder.dateDecodingStrategy = Message.dateDecodingStrategy
